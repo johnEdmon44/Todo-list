@@ -2,4 +2,109 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#main-header {
+  background-color: rgb(47, 47, 47);
+  color: white;
+  height: 12vh;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 3%;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+#task {
+  color: black;
+  background-color: rgb(235, 235, 235);
+  width: 80vw;
+}
+
+main {
+  display: flex;
+}
+
+#task-header {
+  border-bottom: 2px solid rgb(141, 141, 141);
+  width: 76vw;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 1.5rem;
+}
+
+nav {
+  background-color: rgb(213, 213, 213);
+  width: 20%;
+  height: 88vh;
+  font-size: 1.1rem;
+
+}
+
+nav li {
+  padding: 10px;
+  list-style-type: none;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+nav ul {
+  margin-top: 10%;
+}
+
+#nav-projects h1{
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 15%;
+}
+
+#add-project {
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+.tasks {
+  background-color: white;
+  list-style-type: none;
+  height: 40px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 2%;
+}
+
+.foo {
+  display: flex;
+  margin-left: 5%;
+}
+
+.foo p{
+  margin-left: 20px;
+}
+
+#date {
+  margin-right: 5%;
+}
+
+#task-list {
+  margin-top: 5%;
 }

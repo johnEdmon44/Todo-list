@@ -4,9 +4,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <script src="main.js" defer></script>
   <title>Todo list</title>
 </head>
 <body>
+
+  <header id="main-header">
+    <h1>Todo List</h1>
+  </header>
+
+
+  <main>
+    <nav>
+      <ul>
+        <li>
+          <button>Inbox</button>
+        </li>
+  
+        <li>
+          <button>Today</button>
+        </li>
+  
+        <li>
+          <button>This week</button>
+        </li>
+      </ul>
+  
+      <ul id="nav-projects">
+        <h1>Projects</h1>
+        <button id="add-project">+ Add project</button>
+        
+        <li>
+          <button>Sample project</button>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="task">
+      <header id="task-header">
+        <button id="add-task">+ Add tasks</button>
+      </header>
+      
+      <ul id="task-list">
+        <li class="tasks">
+          <div class="foo">
+            <input type="checkbox">
+            <p>Sample task 1</p>
+          </div>
+          <div id="date">
+            <button>set Date</button>
+          </div>
+        </li>
+
+        <li class="tasks">
+          <div class="foo">
+            <input type="checkbox">
+            <p>Sample task 1</p>
+          </div>
+          <div id="date">
+            <button>set Date</button>
+          </div>
+        </li>
+      </ul>
+      
+    </section>
+  </main>
 </body>
 </html>
