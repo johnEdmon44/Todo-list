@@ -115,3 +115,66 @@ nav button:hover {
 #task-list {
   margin-top: 5%;
 }
+
+fieldset {
+  border: 0;
+}
+
+#task-modal {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 20px;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  visibility: hidden;
+}
+
+#task-modal input {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#task-modal div {
+  display: flex;
+  gap: 20px ;
+  text-align: center;
+  justify-content: center;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.add {
+  background-color: rgb(38, 142, 71);
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
+
+.cancel {
+  background-color: brown;
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
+
+#task-modal header {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.visible {
+  visibility: visible !important;
+}

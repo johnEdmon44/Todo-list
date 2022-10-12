@@ -44,7 +44,7 @@
 
     <section id="task">
       <header id="task-header">
-        <button id="add-task">+ Add tasks</button>
+        <button id="open-task">+ Add tasks</button>
       </header>
       
       <ul id="task-list">
@@ -69,6 +69,23 @@
         </li>
       </ul>
       
+      <form id="task-modal">
+        
+        <header>
+          <h1>Add new task</h1>
+        </header>
+        
+        <fieldset>
+          <input type="text" placeholder="Add task">
+        </fieldset>
+
+        <div>
+          <button id="add-task" class="add">Add</button>
+          <button id="close-task" class="cancel">Cancel</button>
+        </div>
+
+      </form>
+
     </section>
   </main>
 </body>
