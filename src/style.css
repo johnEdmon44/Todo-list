@@ -59,12 +59,18 @@ nav {
 nav li {
   padding: 10px;
   list-style-type: none;
-  margin-left: 15%;
-  margin-right: 15%;
 }
 
 nav ul {
   margin-top: 10%;
+}
+
+nav button {
+  width: auto;
+  width: 85%;
+  margin-right: 15%;
+  padding: 10px;
+  margin-left: 15%;
 }
 
 #nav-projects h1{
@@ -73,10 +79,6 @@ nav ul {
   margin-right: 15%;
 }
 
-#add-project {
-  margin-left: 15%;
-  margin-bottom: 5%;
-}
 
 .tasks {
   background-color: white;
