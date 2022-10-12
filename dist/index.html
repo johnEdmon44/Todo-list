@@ -34,7 +34,7 @@
       <ul id="nav-projects">
         <h1>Projects</h1>
         <li>
-          <button id="add-project">+ Add project</button>
+          <button id="open-project">+ Add project</button>
         </li>
         <li>
           <button>Sample project</button>
@@ -69,24 +69,40 @@
         </li>
       </ul>
       
-      <form id="task-modal">
-        
-        <header>
-          <h1>Add new task</h1>
-        </header>
-        
-        <fieldset>
-          <input type="text" placeholder="Add task">
-        </fieldset>
-
-        <div>
-          <button id="add-task" class="add">Add</button>
-          <button id="close-task" class="cancel" type="button">Cancel</button>
-        </div>
-
-      </form>
-
     </section>
   </main>
+
+<!-- Task Modal -->
+  <form id="task-modal" class="modal">
+    <header>
+      <h1>Add new task</h1>
+    </header>
+    
+    <fieldset>
+      <input type="text" placeholder="Add task">
+    </fieldset>
+
+    <div>
+      <button id="add-task" class="add">Add</button>
+      <button id="close-task" class="cancel" type="button">Cancel</button>
+    </div>
+  </form>
+
+  <!-- Project Modal -->
+  <form id="project-modal" class="modal">
+    <header>
+      <h1>Add new Project</h1>
+    </header>
+    
+    <fieldset>
+      <input type="text" placeholder="Project name">
+    </fieldset>
+
+    <div>
+      <button id="add-project" class="add">Add</button>
+      <button id="close-project" class="cancel" type="button">Cancel</button>
+    </div>
+  </form>
+
 </body>
 </html>

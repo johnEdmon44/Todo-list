@@ -120,7 +120,7 @@ fieldset {
   border: 0;
 }
 
-#task-modal {
+.modal {
   background-color: rgb(255, 255, 255);
   display: flex;
   align-content: center;
@@ -135,7 +135,7 @@ fieldset {
   visibility: hidden;
 }
 
-#task-modal input {
+.modal input {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
@@ -144,7 +144,7 @@ fieldset {
   padding-bottom: 5px;
 }
 
-#task-modal div {
+.modal div {
   display: flex;
   gap: 20px ;
   text-align: center;
@@ -170,7 +170,7 @@ fieldset {
   width: 100%;
 }
 
-#task-modal header {
+.task-modal header {
   margin-top: 5%;
   margin-bottom: 5%;
 }
