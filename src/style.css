@@ -71,6 +71,7 @@ nav button {
   margin-right: 15%;
   padding: 10px;
   margin-left: 15%;
+  border-radius: 10px;
 }
 
 nav button:hover {
