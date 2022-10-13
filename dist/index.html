@@ -52,7 +52,7 @@
       <section id="inbox" class="task-tabs visible">
         <h1>Inbox</h1>
 
-        <ul id="task-list">
+        <ul>
           <li class="tasks">
             <div class="foo">
               <input type="checkbox">
@@ -80,7 +80,7 @@
       <section id="today" class="task-tabs">
         <h1>Today</h1>
 
-        <ul id="task-list">
+        <ul>
           <li class="tasks">
             <div class="foo">
               <input type="checkbox">
@@ -106,11 +106,9 @@
 
       <!-- This week tab -->
       <section id="week" class="task-tabs">
-
-
         <h1>This Week</h1>
 
-        <ul id="task-list">
+        <ul>
           <li class="tasks">
             <div class="foo">
               <input type="checkbox">
@@ -133,9 +131,6 @@
         </ul>
       </section>
     </section>
-
-
-  
   </main>
 
 <!-- Task Modal -->
@@ -145,15 +140,28 @@
     </header>
     
     <fieldset>
-      <input type="text" placeholder="Add task">
-      <input type="date" id="start" name="task-date">
+      <ul>
+        <li>
+          <label for="title">Title:</label>
+          <input id="title" type="text" placeholder="Add task">
+        </li>
+
+        <li>
+          <label for="start">Due Date:</label>
+          <input type="date" id="start" name="task-date">
+        </li>
+        
+      </ul>
     </fieldset>
+
+    <textarea id="descript" name="description" form="task-modal" rows="5">Enter Description...</textarea>
 
     <div>
       <button id="add-task" class="add">Add</button>
       <button id="close-task" class="cancel" type="button">Cancel</button>
     </div>
   </form>
+  
 
   <!-- Project Modal -->
   <form id="project-modal" class="modal">

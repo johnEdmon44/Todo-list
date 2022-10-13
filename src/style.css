@@ -92,18 +92,25 @@ nav button:hover {
   top: 50%; right: 50%;
   transform: translate(50%,-50%);
   position: absolute;
-  width: 30%;
-  text-align: center;
   visibility: hidden;
+  width: 25%;
 }
 
-.modal input {
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+.modal li {
+  list-style-type: none;
+}
+
+.modal input,
+.modal label,
+.modal textarea {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.modal fieldset {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .modal div {
@@ -155,6 +162,7 @@ nav button:hover {
   width: 100%;
 }
 
+
 .tasks {
   background-color: rgb(246, 246, 246);
   display: flex;
@@ -176,9 +184,6 @@ nav button:hover {
   margin-left: 10px;
 }
 
-#task-list {
-  list-style-type: none;
-}
 
 .date {
   margin-right: 20px;
