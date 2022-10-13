@@ -108,6 +108,10 @@ nav button:hover {
   margin-right: 15%;
 }
 
+.modal label {
+  width: 100%;
+}
+
 .modal fieldset {
   margin-top: 2%;
   margin-bottom: 2%;
