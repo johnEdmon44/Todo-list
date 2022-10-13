@@ -19,15 +19,15 @@
     <nav>
       <ul>
         <li>
-          <button>Inbox</button>
+          <button id="tab-inbox">Inbox</button>
         </li>
   
         <li>
-          <button>Today</button>
+          <button id="tab-today">Today</button>
         </li>
   
         <li>
-          <button>This week</button>
+          <button id="tab-week">This week</button>
         </li>
       </ul>
   
@@ -44,32 +44,97 @@
 
     <section id="task">
       <header id="task-header">
-        <button id="open-task">+ Add tasks</button>
+        <button id="open-task">+Add task</button>
       </header>
-      
-      <ul id="task-list">
-        <li class="tasks">
-          <div class="foo">
-            <input type="checkbox">
-            <p>Sample task 1</p>
-          </div>
-          <div id="date">
-            <button>set Date</button>
-          </div>
-        </li>
 
-        <li class="tasks">
-          <div class="foo">
-            <input type="checkbox">
-            <p>Sample task 1</p>
-          </div>
-          <div id="date">
-            <button>set Date</button>
-          </div>
-        </li>
-      </ul>
-      
+    <!-- Inbox tab -->
+      <section id="inbox" class="task-tabs visible">
+        <h1>Inbox</h1>
+
+        <ul id="task-list">
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+
+      <!-- Today task tab -->
+      <section id="today" class="task-tabs">
+        <h1>Today</h1>
+
+        <ul id="task-list">
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+
+      <!-- This week tab -->
+      <section id="week" class="task-tabs">
+
+
+        <h1>This Week</h1>
+
+        <ul id="task-list">
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+
+          <li class="tasks">
+            <div class="foo">
+              <input type="checkbox">
+              <p>Sample task 1</p>
+            </div>
+            <div id="date">
+              <button>set Date</button>
+            </div>
+          </li>
+        </ul>
+      </section>
     </section>
+
+
+  
   </main>
 
 <!-- Task Modal -->

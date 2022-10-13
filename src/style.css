@@ -31,6 +31,12 @@ button {
   color: black;
   background-color: rgb(235, 235, 235);
   width: 80vw;
+  position: relative;
+}
+
+.task-tabs {
+  position: absolute;
+  visibility: hidden;
 }
 
 main {
