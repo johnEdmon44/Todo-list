@@ -62,7 +62,7 @@ weekBtn.addEventListener('click', () => {
 });
 })();
 
-
+//set a minimum date
 (function () {
   let minDate = new Date().toISOString().split('T')[0];
   document.querySelector('#start').value = minDate;
