@@ -61,3 +61,11 @@ weekBtn.addEventListener('click', () => {
   weekTask.classList.add('visible');
 });
 })();
+
+
+(function () {
+  let minDate = new Date().toISOString().split('T')[0];
+  document.querySelector('#start').value = minDate;
+  document.querySelector('#start').setAttribute('min', minDate);
+  console.log(minDate)
+})();
