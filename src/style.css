@@ -27,13 +27,6 @@ button {
   cursor: pointer;
 }
 
-#task {
-  color: black;
-  background-color: rgb(235, 235, 235);
-  width: 80vw;
-  position: relative;
-}
-
 .task-tabs {
   position: absolute;
   visibility: hidden;
@@ -59,7 +52,6 @@ nav {
   width: 20%;
   height: 88vh;
   font-size: 1.1rem;
-
 }
 
 nav li {
@@ -88,42 +80,6 @@ nav button:hover {
   margin-bottom: 10%;
   margin-left: 10%;
   margin-right: 15%;
-}
-
-
-.tasks {
-  background-color: white;
-  list-style-type: none;
-  height: 40px;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
-  margin-top: 2%;
-}
-
-.foo {
-  display: flex;
-  margin-left: 5%;
-}
-
-.foo p{
-  margin-left: 20px;
-}
-
-#date {
-  margin-right: 5%;
-}
-
-#task-list {
-  margin-top: 5%;
-}
-
-fieldset {
-  border: 0;
 }
 
 .modal {
@@ -183,4 +139,47 @@ fieldset {
 
 .visible {
   visibility: visible !important;
+}
+
+#task h1{
+  margin-left: 5%;
+  width: 100%;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#task {
+  color: black;
+  background-color: rgb(235, 235, 235);
+  width: 100%;
+}
+
+.tasks {
+  background-color: rgb(246, 246, 246);
+  display: flex;
+  width: 75vw;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 50px;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.foo {
+  display: flex;
+  margin-left: 10px;
+}
+.foo p {
+  margin-left: 10px;
+}
+
+#task-list {
+  list-style-type: none;
+}
+
+.date {
+  margin-right: 20px;
 }
