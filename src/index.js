@@ -1,3 +1,3 @@
-import './style.css';
+import '/dist/style.css';
 
 'use strict';
