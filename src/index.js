@@ -75,7 +75,7 @@ weekBtn.addEventListener('click', () => {
 
 
 //create projects
-(function () {
+const project = (function () {
   const project = document.querySelector('#project-name');
   const addProjectBtn = document.querySelector('#add-project');
   const projects = [{title: 'qwe'}];
@@ -93,5 +93,29 @@ weekBtn.addEventListener('click', () => {
     }
   }
   
-  addProjectBtn.addEventListener('click', addProject);
+  addProjectBtn.addEventListener('click', () => {
+    addProject();
+    displayProject.displayProject();
+  });
+
+  return {
+    project,
+  }
+})();
+
+
+//display projects 
+const displayProject = (function () {
+  function displayProject () {
+    const projects = document.querySelector('#nav-projects');
+    const projectList = document.createElement('li');
+    const projectBtn = document.createElement('button');
+    projectBtn.textContent = project.project.value;
+    projects.appendChild(projectList);
+    projectList.appendChild(projectBtn);
+  }
+
+  return {
+    displayProject
+  }
 })();
