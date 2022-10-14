@@ -67,5 +67,25 @@ weekBtn.addEventListener('click', () => {
   let minDate = new Date().toISOString().split('T')[0];
   document.querySelector('#start').value = minDate;
   document.querySelector('#start').setAttribute('min', minDate);
-  console.log(minDate)
+})();
+
+
+//create projects
+(function () {
+  const project = document.querySelector('#project-name');
+  const addProjectBtn = document.querySelector('#add-project');
+  let projects = [];
+  
+  const createProjects = title => {
+    return {
+      title,
+    }
+  }
+  
+  function addProject () {
+    projects.push(createProjects(project.value));
+    console.log(projects);
+  }
+  
+  addProjectBtn.addEventListener('click', addProject);
 })();
