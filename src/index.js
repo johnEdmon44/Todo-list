@@ -2,7 +2,7 @@ import './style.css';
 
 'use strict';
 
-(function () {
+const modal = (function () {
   const openProject = document.querySelector('#open-project');
   const projectModal = document.querySelector('#project-modal');
   const closeProject = document.querySelector('#close-project');
@@ -29,6 +29,10 @@ import './style.css';
   closeTask.addEventListener('click', () => {
     taskModal.classList.remove('visible');
   });
+
+  return {
+    projectModal,
+  }
 })();
 
 
@@ -74,12 +78,10 @@ weekBtn.addEventListener('click', () => {
 (function () {
   const project = document.querySelector('#project-name');
   const addProjectBtn = document.querySelector('#add-project');
-  let projects = [];
+  const projects = [{title: 'qwe'}];
   
   const createProjects = title => {
-    return {
-      title,
-    }
+    return {title};
   }
   
   function addProject () {
@@ -87,6 +89,7 @@ weekBtn.addEventListener('click', () => {
       alert('Pls put project name');
     } else {
       projects.push(createProjects(project.value));
+      modal.projectModal.classList.remove('visible');
     }
   }
   
