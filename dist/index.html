@@ -15,9 +15,9 @@
 
   <nav>
     <ul>
-      <li><button>Inbox</button></li>
-      <li><button>Today</button></li>
-      <li><button>This week</button></li>
+      <li><button class="active-button" id="inbox-button">Inbox</button></li>
+      <li><button id="today-button">Today</button></li>
+      <li><button id="this-week-button">This week</button></li>
     </ul>
 
     <h2>Projects</h2>
@@ -29,16 +29,23 @@
   </nav>
 
   <main>
-      <section id="inbox">
-        <h1>inbox</h1>
+      <section id="inbox" class="hidden active-content">
+        <header class="content-header ">
+          <h1>Inbox</h1>
+        </header>
+ 
       </section>
 
-      <section id="today">
-        <h1>today</h1>
+      <section id="today" class="hidden">
+        <header class="content-header ">
+          <h1>Today</h1>
+        </header>
       </section>
 
-      <section id="this week">
-        <h1>this week</h1>
+      <section id="this-week" class="hidden">
+        <header class="content-header">
+          <h1>This week</h1>
+        </header>
       </section>
   </main>
 
