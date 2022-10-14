@@ -85,17 +85,22 @@ const project = (function () {
   }
   
   function addProject () {
-    if(!project.value) {
-      alert('Pls put project name');
-    } else {
-      projects.push(createProjects(project.value));
-      modal.projectModal.classList.remove('visible');
-    }
+
+    projects.forEach(titles => {
+      if(titles.title == project.value) {
+        alert('Project already exist');
+      } else if(!project.value) {
+        alert('Please enter a project name');
+      } else {
+        projects.push(createProjects(project.value));
+        modal.projectModal.classList.remove('visible');
+        displayProject.displayProject();
+      }
+    });
   }
   
   addProjectBtn.addEventListener('click', () => {
     addProject();
-    displayProject.displayProject();
   });
 
   return {
