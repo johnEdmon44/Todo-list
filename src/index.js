@@ -83,8 +83,11 @@ weekBtn.addEventListener('click', () => {
   }
   
   function addProject () {
-    projects.push(createProjects(project.value));
-    console.log(projects);
+    if(!project.value) {
+      alert('Pls put project name');
+    } else {
+      projects.push(createProjects(project.value));
+    }
   }
   
   addProjectBtn.addEventListener('click', addProject);
