@@ -96,9 +96,26 @@ import {Projects} from './projects';
     createProjectButton.classList.add('projects');
   }
 
+  function createProjectTabs () {
+    const mainContainer = document.querySelector('#main');
+    const projectTabs = document.createElement('section');
+    const projectHeaderContainer = document.createElement('header');
+    const projectTitle = document.createElement('h1');
+    
+    projectTabs.classList.add('hidden');
+    projectHeaderContainer.classList.add('content-header');
+    projectTabs.classList.add('tabs');
+
+    mainContainer.appendChild(projectTabs);
+    projectTabs.appendChild(projectHeaderContainer);
+    projectHeaderContainer.appendChild(projectTitle);
+    projectTitle.textContent = projectName.value;
+  }
+
   addProject.addEventListener('click', () => {
     pushProjectName();
     displayProjectName();
+    createProjectTabs();
     resetProjectInput();
   });
 })();
