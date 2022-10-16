@@ -13,6 +13,7 @@
     <h1>TODO</h1>
   </header>
 
+
   <nav>
     <ul>
       <li><button class="active-button" id="inbox-button">Inbox</button></li>
@@ -23,10 +24,11 @@
     <h2>Projects</h2>
     <button id="open-project">+Add project</button>
     <ul>
-      <li><button>Sample1</button></li>
-      <li><button>Sample2</button></li>
+      <li><button class="projects">Sample1</button></li>
+      <li><button class="projects">Sample2</button></li>
     </ul>
   </nav>
+
 
   <main>
       <section id="inbox" class="hidden active-content">
@@ -49,5 +51,22 @@
       </section>
   </main>
 
+
+  <div id="project-modal" class="center-transform">
+    <h1>Add project</h1>
+    <form action="">
+      <ul>
+        <li>
+          <label for="project-name">Project Name</label>
+          <input id="project-name" type="text" name="project-name">
+        </li>
+        <li>
+          <button id="add-project" class="add" type="button">Add project</button>
+          <button id="cancel-project" class="cancel">Cancel</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+ 
 </body>
 </html>

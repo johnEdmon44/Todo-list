@@ -1,3 +1,7 @@
+import './projects';
+'use strict';
+
+
 // Inbox, Today, This week tab switching
 (function () {
   const inbox = document.querySelector('#inbox');
@@ -41,5 +45,45 @@
 
     thisWeek.classList.add('active-content');
     thisWeekBtn.classList.add('active-button');
+  });
+})();
+
+
+
+//Open/close project modal
+(function () {
+  const projectModal = document.querySelector('#project-modal');
+  const openProject = document.querySelector('#open-project');
+  const closeProject = document.querySelector('#cancel-project');
+
+  openProject.addEventListener('click', () => {
+    projectModal.classList.add('active-content');
+  });
+
+  closeProject.addEventListener('click', () => {
+    projectModal.classList.remove('active-content');
+  });
+})();
+
+
+
+//Create projects
+(function () {
+  const projectsArray = []; 
+  const addProject = document.querySelector('#add-project');
+  const projectName = document.querySelector('#project-name');
+  
+  function pushProjectName () {
+    projectsArray.push(new Projects(projectName.value));
+    projectsArray.forEach(names => {
+      console.log(names.projectName)
+    });
+  }
+
+  //get all project names in array
+
+
+  addProject.addEventListener('click', () => {
+    pushProjectName();
   });
 })();
