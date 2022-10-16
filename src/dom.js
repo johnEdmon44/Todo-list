@@ -1,4 +1,4 @@
-import './projects';
+import {Projects} from './projects';
 'use strict';
 
 
