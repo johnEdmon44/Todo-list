@@ -73,9 +73,7 @@ import {Projects} from './projects';
   const addProject = document.querySelector('#add-project');
   const projectName = document.querySelector('#project-name');
   const projectModal = document.querySelector('#project-modal');
-  const projectNamesContainer = document.querySelector('#project-name-container');
-  const createProjectList = document.createElement('li');
-  const createProjectButton = document.createElement('button')
+
   
   function pushProjectName () {
     projectsArray.push(new Projects(projectName.value));
@@ -90,10 +88,15 @@ import {Projects} from './projects';
   }
 
   function displayProjectName () {
+    const projectNamesContainer = document.querySelector('#project-name-container');
+    const createProjectList = document.createElement('li');
+    const createProjectButton = document.createElement('button');
+
+    createProjectButton.classList.add('projects');
+
     projectNamesContainer.appendChild(createProjectList);
     createProjectList.appendChild(createProjectButton);
-    createProjectButton.textContent = projectName.value;
-    createProjectButton.classList.add('projects');
+    createProjectButton.textContent += projectName.value;
   }
 
   function createProjectTabs () {
