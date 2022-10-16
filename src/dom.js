@@ -72,6 +72,7 @@ import {Projects} from './projects';
   const projectsArray = []; 
   const addProject = document.querySelector('#add-project');
   const projectName = document.querySelector('#project-name');
+  const projectModal = document.querySelector('#project-modal');
   
   function pushProjectName () {
     projectsArray.push(new Projects(projectName.value));
@@ -80,10 +81,14 @@ import {Projects} from './projects';
     });
   }
 
-  //get all project names in array
 
+  function resetProjectInput () {
+    projectName.value = '';
+    projectModal.classList.remove('active-content');
+  }
 
   addProject.addEventListener('click', () => {
     pushProjectName();
+    resetProjectInput();
   });
 })();
