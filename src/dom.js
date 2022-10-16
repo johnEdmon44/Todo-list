@@ -73,6 +73,9 @@ import {Projects} from './projects';
   const addProject = document.querySelector('#add-project');
   const projectName = document.querySelector('#project-name');
   const projectModal = document.querySelector('#project-modal');
+  const projectNamesContainer = document.querySelector('#project-name-container');
+  const createProjectList = document.createElement('li');
+  const createProjectButton = document.createElement('button')
   
   function pushProjectName () {
     projectsArray.push(new Projects(projectName.value));
@@ -81,14 +84,21 @@ import {Projects} from './projects';
     });
   }
 
-
   function resetProjectInput () {
     projectName.value = '';
     projectModal.classList.remove('active-content');
   }
 
+  function displayProjectName () {
+    projectNamesContainer.appendChild(createProjectList);
+    createProjectList.appendChild(createProjectButton);
+    createProjectButton.textContent = projectName.value;
+    createProjectButton.classList.add('projects');
+  }
+
   addProject.addEventListener('click', () => {
     pushProjectName();
+    displayProjectName();
     resetProjectInput();
   });
 })();
