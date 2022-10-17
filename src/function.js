@@ -1,4 +1,5 @@
 import { Projects } from "./projects";
+import { Tasks } from "./task";
 
 
 //  open/close project modal
@@ -97,3 +98,4 @@ const projectModal = (function () {
 
 
 
+  
