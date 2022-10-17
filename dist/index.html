@@ -22,7 +22,11 @@
       <li><button data-tab-target="#week">This week</button></li>
 
       <h2  id="border-bottom">Projects</h2>
-    </ul>    
+
+    </ul>
+
+   
+    
   </nav>
 
 
@@ -30,7 +34,6 @@
       <section id="inbox" class="hidden active-content" data-tab-content>
         <header class="content-header ">
           <h1>Inbox</h1>
-          <button class="taskModal">+Add task</button>
         </header>
       </section>
 
@@ -64,37 +67,5 @@
     </form>
   </div>
  
-
-  <div id="task-modal" class="center-transform">
-    <h1>Add Task</h1>
-    <form>
-      <ul>
-        <li>
-          <label for="task-name">Task name</label>
-          <input type="text" name="task name" id="task-name">
-        </li>
-
-        <li>
-          <label for="due-date">Due date</label>
-          <input type="date" name="due date" id="due-date">
-        </li>
-        <li>
-          <label for="priority">Priority</label>
-          <select name="priority" id="priority">
-            <option value="low">Low</option>
-            <option value="Mid">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </li>
-        <li>
-          <textarea name="description" id="description" cols="30" rows="2"></textarea>
-        </li>
-        <li>
-          <button id="add-task" class="add">Add</button>
-          <button id="cancel-task" class="cancel">Cancel</button>
-        </li>
-      </ul>
-    </form>
-  </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 import { Projects } from "./projects";
-import { Tasks } from "./task";
-
+export {project};
 
 //  open/close project modal
 const projectModal = (function () {
@@ -26,7 +25,7 @@ const projectModal = (function () {
 
 
 //Create project
-(function () {
+const project = (function () {
   const projects = [];
   const projectName = document.querySelector('#project-name');
   const addProjectButton = document.querySelector('#add-project');
@@ -40,7 +39,7 @@ const projectModal = (function () {
       createProjectPanel();
       projectName.value = '';
       projectModal.closeProjectModal();
-      runTabSwitching();
+      tabSwitch(); // RUn it so it applies to newly created project tab
     }
   };
 
@@ -73,14 +72,14 @@ const projectModal = (function () {
     projectSection.setAttribute('id', projectName.value);
     projectSection.setAttribute('data-tab-content', "");
   }
-  
-  function runTabSwitching() {
-    const tabs = document.querySelectorAll('[data-tab-target]')
-    const tabContents = document.querySelectorAll('[data-tab-content]')
+
+  function tabSwitch () {
+    const tabs = document.querySelectorAll('[data-tab-target]');
+    const tabContents = document.querySelectorAll('[data-tab-content]');
   
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
+        const target = document.querySelector(tab.dataset.tabTarget);
         tabContents.forEach(tabContent => {
           tabContent.classList.remove('active-content');
         });
@@ -92,10 +91,9 @@ const projectModal = (function () {
       });
     });
   }
-
   addProjectButton.addEventListener('click', createProject);
+  return {
+    tabSwitch
+  }
 })();
 
-
-
-  
