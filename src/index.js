@@ -6,4 +6,4 @@ import { project } from './function';
 
 
 //run tab switch
-project.tabSwitch
+project.tabSwitch();
