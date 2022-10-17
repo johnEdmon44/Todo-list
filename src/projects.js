@@ -1,6 +1,6 @@
 export class Projects {
   constructor(name) {
-    this.projectName = name;
-    this.task = [{}];
+    this.name = name;
+    this.task = [];
   }
 }

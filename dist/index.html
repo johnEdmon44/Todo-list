@@ -15,36 +15,35 @@
 
 
   <nav>
-    <ul>
-      <li><button class="active-button" id="inbox-button">Inbox</button></li>
-      <li><button id="today-button">Today</button></li>
-      <li><button id="this-week-button">This week</button></li>
+    <button id="open-project">Add project</button>
+    <ul id="tab-container">
+      <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
+      <li><button data-tab-target="#today">Today</button></li>
+      <li><button data-tab-target="#week">This week</button></li>
+
+      <h2  id="border-bottom">Projects</h2>
+
     </ul>
 
-    <h2>Projects</h2>
-    <button id="open-project">+Add project</button>
-    <ul id="project-name-container">
-      <li><button class="projects">Sample1</button></li>
-      <li><button class="projects">Sample2</button></li>
-    </ul>
+   
+    
   </nav>
 
 
   <main id="main">
-      <section id="inbox" class="hidden active-content tabs">
+      <section id="inbox" class="hidden active-content" data-tab-content>
         <header class="content-header ">
           <h1>Inbox</h1>
         </header>
- 
       </section>
 
-      <section id="today" class="hidden tabs">
+      <section id="today" class="hidden" data-tab-content>
         <header class="content-header ">
           <h1>Today</h1>
         </header>
       </section>
 
-      <section id="this-week" class="hidden tabs">
+      <section id="week" class="hidden" data-tab-content>
         <header class="content-header">
           <h1>This week</h1>
         </header>
