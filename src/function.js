@@ -40,6 +40,7 @@ const project = (function () {
       projectName.value = '';
       projectModal.closeProjectModal();
       tabSwitch(); // RUn it so it applies to newly created project tab
+      taskModal();
     }
   };
 
@@ -61,12 +62,16 @@ const project = (function () {
     const projectSection = document.createElement('section');
     const projectHeader = document.createElement('header');
     const projectTitle = document.createElement('h1');
+    const taskButton = document.createElement('button');
 
     projectPanelContainer.appendChild(projectSection);
     projectSection.appendChild(projectHeader);
     projectHeader.appendChild(projectTitle);
     projectTitle.textContent = projectName.value;
+    projectHeader.appendChild(taskButton);
+    taskButton.textContent = '+Add task';
 
+    taskButton.classList.add('task-button');
     projectSection.classList.add('hidden');
     projectHeader.classList.add('content-header');
     projectSection.setAttribute('id', projectName.value);
@@ -91,9 +96,22 @@ const project = (function () {
       });
     });
   }
+
+  function taskModal () {
+    const taskButton = document.querySelectorAll('.task-button');
+    const taskModal = document.querySelector('#task-modal');
+  
+    function openModal () {
+      taskModal.classList.add('active-content');
+    }
+    
+    taskButton.forEach(button => {
+      button.addEventListener('click', openModal);
+    })
+  }
+
   addProjectButton.addEventListener('click', createProject);
   return {
     tabSwitch
   }
 })();
-
