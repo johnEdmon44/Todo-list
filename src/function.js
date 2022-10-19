@@ -34,15 +34,23 @@ const project = (function () {
     if (!projectName.value) {
       alert('Please enter project name');
     } else {
-      projects.push(new Projects(projectName.value));
+      projects.push(new Projects(projectName.value, createId()));
       createProjectTab();
       createProjectPanel();
       projectName.value = '';
       projectModal.closeProjectModal();
       tabSwitch(); // RUn it so it applies to newly created project tab
       taskModal();
+      console.log(projects);
+      createId();
     }
   };
+
+  function createId () {
+    projects.forEach((item, id) => {
+      item.id = id + 1;
+    })
+  }
 
   function createProjectTab () {
     const tabContainer = document.querySelector('#tab-container');
