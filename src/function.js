@@ -43,6 +43,7 @@ const project = (function () {
       taskModal();
       console.log(projects);
       createId();
+      idForTask();
     }
   };
 
@@ -77,13 +78,22 @@ const project = (function () {
     projectHeader.appendChild(projectTitle);
     projectTitle.textContent = projectName.value;
     projectHeader.appendChild(taskButton);
-    taskButton.textContent = '+Add task';
+    taskButton.textContent = '+Add task'; 
 
     taskButton.classList.add('task-button');
     projectSection.classList.add('hidden');
     projectHeader.classList.add('content-header');
     projectSection.setAttribute('id', projectName.value);
     projectSection.setAttribute('data-tab-content', "");
+
+  }
+
+
+  function idForTask () {
+    const taskBtn = document.querySelectorAll('.task-button');
+    taskBtn.forEach((id, i) => {
+      id.setAttribute('data-task', i + 1);
+    });
   }
 
   function tabSwitch () {
