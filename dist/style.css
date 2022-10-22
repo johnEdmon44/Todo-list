@@ -90,7 +90,6 @@ nav h2 {
 main {
   height: 100%;
   margin-top: 70px;
-  border: 1px solid black;
   margin-left: 20%;
   flex-grow: 1;
   position: relative;
@@ -157,7 +156,6 @@ form li {
 
 form button {
   text-align: center;
-  border: 1px solid red;
   padding: 5px;
 }
 
@@ -171,4 +169,60 @@ form button {
   margin-top: 20px;
   font-size: 1.5rem;
   text-align: center;
+}
+
+
+.task-absolute {
+  position: absolute;
+  top: 120px;  
+  z-index: -1;
+}
+
+
+.tasks {
+  background-color: rgb(209, 209, 209);
+  margin-left: 15%;
+  margin-right: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 2%;
+  width: 1000px;
+  height: 50px;
+}
+
+
+.tasks-description {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 2%;
+  border: 1px solid red;
+}
+
+.tasks-description p:nth-child(3) {
+  flex-grow: 1;
+}
+
+.tasks-description p:nth-child(2) {
+  flex-grow: 0.3;
+  margin-left: 2%;
+}
+
+
+
+.tasks-buttons {
+  text-align: center;
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+  border: 1px solid green;
+}
+
+
+#project-modal,
+#task-modal {
+  z-index: 100;
+  background-color: white;
 }

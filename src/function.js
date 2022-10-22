@@ -79,6 +79,8 @@ const project = (function () {
     projectSection.setAttribute('id', projectName.value);
     projectSection.setAttribute('data-tab-content', "");
     taskButton.setAttribute('data-project', projectName.value);
+
+
   }
 
   function tabSwitch () {
@@ -135,7 +137,9 @@ const project = (function () {
   }
 
   const taskList = [];
-  const addTask = document.querySelector('#add-task')
+  const addTask = document.querySelector('#add-task');
+
+  
   function addTaskToProject() {
     const getId = document.querySelector('.active-content');
     const taskName = document.querySelector('#task-name');
@@ -147,6 +151,46 @@ const project = (function () {
     const newTask = new Tasks( projectid, taskName.value, dueDate.value, description.value, priority.value );
     const foo = projects.find(p => p.id === projectid);
     foo.tasks.push(newTask);
+    displayTask();
+    console.log(projects)
+
+    function displayTask() {
+      const section = document.querySelector('.active-content');
+      const taskContainer = document.createElement('div');
+      const dTaskContainer = document.createElement('div');
+      const dTaskInfoContainer = document.createElement('div');
+      const dTaskName = document.createElement('p');
+      const dDescription = document.createElement('p');
+      const dDate = document.createElement('p');
+      
+
+      const taskBtnContainer = document.createElement('div');
+      const editBtn = document.createElement('button');
+      const deleteBtn = document.createElement('button');
+
+      section.appendChild(taskContainer);
+      taskContainer.appendChild(dTaskContainer);
+      dTaskContainer.appendChild(dTaskInfoContainer);
+      dTaskInfoContainer.appendChild(dTaskName);
+      dTaskInfoContainer.appendChild(dDescription);
+      dTaskInfoContainer.appendChild(dDate);
+
+      dTaskInfoContainer.appendChild(taskBtnContainer);
+      taskBtnContainer.appendChild(editBtn);
+      taskBtnContainer.appendChild(deleteBtn);
+
+      taskContainer.classList.add('task-absolute');
+      dTaskContainer.classList.add('tasks');
+      dTaskInfoContainer.classList.add('tasks-description');
+      taskBtnContainer.classList.add('tasks-button');
+
+      dTaskName.textContent = taskName.value;
+      dDescription.textContent = description.value;
+      dDate.textContent = description.value;  
+
+      editBtn.textContent = 'Edit';
+      deleteBtn.textContent = 'X';
+    }
   }
 
   addProjectButton.addEventListener('click', createProject);
