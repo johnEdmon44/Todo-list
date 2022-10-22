@@ -1,4 +1,5 @@
 import { Projects } from "./projects";
+import { Tasks } from "./task";
 export {project};
 
 //  open/close project modal
@@ -34,24 +35,16 @@ const project = (function () {
     if (!projectName.value) {
       alert('Please enter project name');
     } else {
-      projects.push(new Projects(projectName.value, createId()));
+      projects.push(new Projects(projectName.value, projectName.value));
       createProjectTab();
       createProjectPanel();
       projectName.value = '';
       projectModal.closeProjectModal();
       tabSwitch(); // RUn it so it applies to newly created project tab
       taskModal();
-      console.log(projects);
-      createId();
-      idForTask();
     }
   };
 
-  function createId () {
-    projects.forEach((item, id) => {
-      item.id = id + 1;
-    })
-  }
 
   function createProjectTab () {
     const tabContainer = document.querySelector('#tab-container');
@@ -62,8 +55,8 @@ const project = (function () {
     tabList.appendChild(tabButton);
 
     tabButton.textContent = projectName.value;
+    tabButton.setAttribute('data-project-id', projectName.value)
     tabButton.setAttribute('data-tab-target', `#${projectName.value}`);
-
   }
 
   function createProjectPanel () {
@@ -85,15 +78,7 @@ const project = (function () {
     projectHeader.classList.add('content-header');
     projectSection.setAttribute('id', projectName.value);
     projectSection.setAttribute('data-tab-content', "");
-
-  }
-
-
-  function idForTask () {
-    const taskBtn = document.querySelectorAll('.task-button');
-    taskBtn.forEach((id, i) => {
-      id.setAttribute('data-task', i + 1);
-    });
+    taskButton.setAttribute('data-project', projectName.value);
   }
 
   function tabSwitch () {
@@ -118,14 +103,50 @@ const project = (function () {
   function taskModal () {
     const taskButton = document.querySelectorAll('.task-button');
     const taskModal = document.querySelector('#task-modal');
+    const closeBtn = document.querySelectorAll('.cancel');
   
     function openModal () {
       taskModal.classList.add('active-content');
     }
+
+    function closeModal() {
+      taskModal.classList.remove('active-content');
+    }
     
     taskButton.forEach(button => {
-      button.addEventListener('click', openModal);
-    })
+      button.addEventListener('click', () => {
+        openModal();
+      });
+    });
+
+    closeBtn.forEach(close => {
+      close.addEventListener('click', closeModal);
+    });
+
+    addTask.addEventListener('click', (e) => {
+      const taskForm = document.querySelector('#task-form');
+      e.stopImmediatePropagation();
+      addTaskToProject();
+      closeModal();
+      taskForm.reset()
+    });
+
+  
+  }
+
+  const taskList = [];
+  const addTask = document.querySelector('#add-task')
+  function addTaskToProject() {
+    const getId = document.querySelector('.active-content');
+    const taskName = document.querySelector('#task-name');
+    const dueDate = document.querySelector('#due-date');
+    const priority = document.querySelector('#priority');
+    const description = document.querySelector('#description');
+    const projectid = getId.getAttribute('id');
+
+    const newTask = new Tasks( projectid, taskName.value, dueDate.value, description.value, priority.value );
+    const foo = projects.find(p => p.id === projectid);
+    foo.tasks.push(newTask);
   }
 
   addProjectButton.addEventListener('click', createProject);
