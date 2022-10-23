@@ -199,3 +199,11 @@ const project = (function () {
     tabSwitch
   }
 })();
+
+
+(function () {
+  let minDate = new Date().toISOString().split('T')[0];
+  document.querySelector('#due-date').value = minDate;
+  document.querySelector('#due-date').setAttribute('min', minDate);
+  console.log(minDate)
+})();
