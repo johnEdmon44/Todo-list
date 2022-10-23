@@ -1,6 +1,7 @@
 export class Tasks {
-  constructor (id, name, date, description, priority) {
-    this.id = id;
+  constructor (projectId, taskId, name, date, description, priority) {
+    this.projectId = projectId;
+    this.taskId = taskId;
     this.name = name;
     this.date = date;
     this.description = description;

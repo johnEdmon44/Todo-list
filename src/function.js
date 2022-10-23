@@ -144,6 +144,7 @@ const project = (function () {
   }
 
 
+
   function addTaskToProject(z) {
     const getId = document.querySelector('.active-content');
     const taskName = document.querySelector('#task-name');
@@ -155,15 +156,16 @@ const project = (function () {
       alert('Please complete the field');
       z.preventDefault();
     } else {
-      const newTask = new Tasks( projectid  , taskName.value, dueDate.value, description.value, priority.value );
+      const newTask = new Tasks( projectid, taskName.value, taskName.value, dueDate.value, description.value, priority.value );
       const foo = projects.find(p => p.id === projectid);
       foo.tasks.push(newTask);
       displayTask();
+      console.log(projects)
     }
-   
+    
 
     function displayTask() {
-      const main = document.querySelector('.active-content')
+      const main = document.querySelector('.active-content');
       const name = document.createElement('p');
       const container = document.createElement('div');
       const description1 = document.createElement('p');
@@ -171,7 +173,6 @@ const project = (function () {
       const editBtn = document.createElement('button');
       const deleteBtn = document.createElement('button');
       const checkbox = document.createElement('input');
-
 
       checkbox.type = 'checkbox';
       main.appendChild(container);
@@ -188,8 +189,13 @@ const project = (function () {
       editBtn.textContent = 'Edit';
       deleteBtn.textContent = 'X';
 
+      deleteBtn.classList.add('delete-task');
+      editBtn.classList.add('edit-task');
       date.disabled = true;
       container.classList.add('tasks');
+
+      deleteBtn.setAttribute('data-delete', taskName.value);
+      editBtn.setAttribute('data-edit', taskName.value);
     }
     
   }
