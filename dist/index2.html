@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .hidden {
+      visibility: hidden;
+    }
+    .active-content {
+      visibility: visible !important;
+    }
+    .active-button {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="add-task">Add task</button>
+  <nav>
+    <ul id="tab-container">
+      <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
+      <li><button data-tab-target="#today">Today</button></li>
+      <li><button data-tab-target="#week">This week</button></li>
+      <h2  id="border-bottom">Projects</h2>
+    </ul>
+  </nav>
+
+
+  <main id="main">
+      <section id="inbox" class="hidden active-content container" data-tab-content>
+      </section>
+
+      <section id="today" class="hidden" data-tab-content>
+      </section>
+
+      <section id="week" class="hidden" data-tab-content>
+      </section>
+  </main>
+  <script>
+      const addTaskBtn = document.querySelector('#add-task')
+
+      addProjectBtn.addEventListener('click', addProject);
+      addTaskBtn.addEventListener('click', addTask);
+
+      function addTask() {
+        const container = document.querySelector('.active-content');
+        const tasks = document.createElement('div');
+
+        container.appendChild(tasks);
+        tasks.classList.add('tasks');
+      }
+
+      function tabSwitch() {
+          const tabs = document.querySelectorAll('[data-tab-target]');
+          const tabContents = document.querySelectorAll('[data-tab-content]');
+        
+          tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+              const target = document.querySelector(tab.dataset.tabTarget);
+              tabContents.forEach(tabContent => {
+                tabContent.classList.remove('active-content');
+              });
+              tabs.forEach(tab => {
+                tab.classList.remove('active-button');
+              });
+              tab.classList.add('active-button');
+              target.classList.add('active-content');
+            });
+          });
+      }
+      tabSwitch();
+
+  </script>
+</body>
+</html>

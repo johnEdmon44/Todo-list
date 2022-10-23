@@ -13,7 +13,7 @@ button {
 
 
 #main-header {
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(46, 12, 12);
   color: white;
   display: flex;
   align-items: center;
@@ -97,11 +97,11 @@ main {
 
 
 .content-header {
-  position: absolute;
   margin-top: 3%;
   margin-left: 5%;
   font-size: 1.5rem;
   border-bottom: 1px solid grey;
+  width: 1000px;
 }
 
 
@@ -172,57 +172,68 @@ form button {
 }
 
 
-.task-absolute {
-  position: absolute;
-  top: 120px;  
-  z-index: -1;
-}
-
-
-.tasks {
-  background-color: rgb(209, 209, 209);
-  margin-left: 15%;
-  margin-right: 15%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  margin-top: 2%;
-  width: 1000px;
-  height: 50px;
-}
-
-
-.tasks-description {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin-left: 2%;
-  border: 1px solid red;
-}
-
-.tasks-description p:nth-child(3) {
-  flex-grow: 1;
-}
-
-.tasks-description p:nth-child(2) {
-  flex-grow: 0.3;
-  margin-left: 2%;
-}
-
-
-
-.tasks-buttons {
-  text-align: center;
-  display: flex;
-  width: 20%;
-  justify-content: space-evenly;
-  border: 1px solid green;
-}
-
-
 #project-modal,
 #task-modal {
   z-index: 100;
   background-color: white;
+}
+
+
+.absolute {
+  position: absolute;
+}
+
+
+.container {
+  position: absolute;
+  width: 1000px;
+  height: 500px;
+  border: 1px solid red;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+
+.tasks{
+  width: 80%;
+  border: 1px solid black;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.tasks input[type="checkbox"]{
+  transform: scale(1.5);
+
+}
+
+.tasks p:nth-child(3) {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.tasks p:nth-child(2) {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.tasks input:nth-child(1) {
+  margin-left: 10px;
+}
+
+.tasks p:nth-child(4) {
+  margin-right: 20px;
+}
+
+.tasks button:nth-child(5) {
+  margin-right: 20px;
+}
+
+.tasks button:nth-child(6) {
+  margin-right: 20px;
 }

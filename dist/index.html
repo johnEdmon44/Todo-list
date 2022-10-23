@@ -20,50 +20,31 @@
       <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
       <li><button data-tab-target="#today">Today</button></li>
       <li><button data-tab-target="#week">This week</button></li>
-
       <h2  id="border-bottom">Projects</h2>
-
     </ul>
-
-   
-    
   </nav>
 
 
   <main id="main">
-      <section id="inbox" class="hidden active-content" data-tab-content>
-        <header class="content-header ">
+      <section id="inbox" class="hidden active-content container" data-tab-content>
           <h1>Inbox</h1>
-        </header>
-        <div class="task-absolute">
+          <button>Add task</button>
           <div class="tasks">
-            <div class="tasks-description">
-              <input type="checkbox">
-              <p>Task name</p>
-              <p>description</p>
-              <p>date</p>
-            </div>
-            <div class="tasks-buttons">
-              <button type="button">edit</button>
-              <button type="button">X</button>
-            </div>
+            <input type="checkbox">
+            <p>Task Name</p>
+            <p>Description</p>
+            <p>23/10/22</p>
+            <button>Edit</button>
+            <button>X</button>
           </div>
-
-
-        </div>
-        
       </section>
 
-      <section id="today" class="hidden" data-tab-content>
-        <header class="content-header ">
-          <h1>Today</h1>
-        </header>
+      <section id="today" class="hidden container" data-tab-content>
+
       </section>
 
-      <section id="week" class="hidden" data-tab-content>
-        <header class="content-header">
-          <h1>This week</h1>
-        </header>
+      <section id="week" class="hidden container" data-tab-content>
+
       </section>
   </main>
 

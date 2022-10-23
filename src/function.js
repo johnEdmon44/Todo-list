@@ -2,6 +2,8 @@ import { Projects } from "./projects";
 import { Tasks } from "./task";
 export {project};
 
+
+
 //  open/close project modal
 const projectModal = (function () {
   const projectForm = document.querySelector('#project-modal');
@@ -25,6 +27,7 @@ const projectModal = (function () {
 })();
 
 
+
 //Create project
 const project = (function () {
   const projects = [];
@@ -46,6 +49,7 @@ const project = (function () {
   };
 
 
+
   function createProjectTab () {
     const tabContainer = document.querySelector('#tab-container');
     const tabList = document.createElement('li');
@@ -59,34 +63,35 @@ const project = (function () {
     tabButton.setAttribute('data-tab-target', `#${projectName.value}`);
   }
 
+
+
   function createProjectPanel () {
-    const projectPanelContainer = document.querySelector('#main');
-    const projectSection = document.createElement('section');
-    const projectHeader = document.createElement('header');
-    const projectTitle = document.createElement('h1');
-    const taskButton = document.createElement('button');
+    const main = document.querySelector('#main');
+    const section = document.createElement('section');
+    const h1 = document.createElement('h1');
+    const addTaskBtn = document.createElement('button');
 
-    projectPanelContainer.appendChild(projectSection);
-    projectSection.appendChild(projectHeader);
-    projectHeader.appendChild(projectTitle);
-    projectTitle.textContent = projectName.value;
-    projectHeader.appendChild(taskButton);
-    taskButton.textContent = '+Add task'; 
+    main.appendChild(section);
+    section.appendChild(h1);
+    section.appendChild(addTaskBtn);
 
-    taskButton.classList.add('task-button');
-    projectSection.classList.add('hidden');
-    projectHeader.classList.add('content-header');
-    projectSection.setAttribute('id', projectName.value);
-    projectSection.setAttribute('data-tab-content', "");
-    taskButton.setAttribute('data-project', projectName.value);
+    h1.textContent = projectName.value;
+    addTaskBtn.textContent = '+ add task';
 
+    section.setAttribute('data-tab-content', '');
+    section.setAttribute('id', projectName.value);
+    addTaskBtn.setAttribute('data-project', projectName.value);
 
+    addTaskBtn.classList.add('task-button');
+    section.classList.add('container');
+    section.classList.add('hidden');
   }
+
+
 
   function tabSwitch () {
     const tabs = document.querySelectorAll('[data-tab-target]');
     const tabContents = document.querySelectorAll('[data-tab-content]');
-  
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const target = document.querySelector(tab.dataset.tabTarget);
@@ -101,6 +106,8 @@ const project = (function () {
       });
     });
   }
+
+
 
   function taskModal () {
     const taskButton = document.querySelectorAll('.task-button');
@@ -125,6 +132,8 @@ const project = (function () {
       close.addEventListener('click', closeModal);
     });
 
+
+    const addTask = document.querySelector('#add-task');
     addTask.addEventListener('click', (e) => {
       const taskForm = document.querySelector('#task-form');
       e.stopImmediatePropagation();
@@ -132,14 +141,9 @@ const project = (function () {
       closeModal();
       taskForm.reset()
     });
-
-  
   }
 
-  const taskList = [];
-  const addTask = document.querySelector('#add-task');
 
-  
   function addTaskToProject() {
     const getId = document.querySelector('.active-content');
     const taskName = document.querySelector('#task-name');
@@ -147,50 +151,40 @@ const project = (function () {
     const priority = document.querySelector('#priority');
     const description = document.querySelector('#description');
     const projectid = getId.getAttribute('id');
-
-    const newTask = new Tasks( projectid, taskName.value, dueDate.value, description.value, priority.value );
+    const newTask = new Tasks( projectid  , taskName.value, dueDate.value, description.value, priority.value );
     const foo = projects.find(p => p.id === projectid);
     foo.tasks.push(newTask);
-    displayTask();
-    console.log(projects)
 
     function displayTask() {
-      const section = document.querySelector('.active-content');
-      const taskContainer = document.createElement('div');
-      const dTaskContainer = document.createElement('div');
-      const dTaskInfoContainer = document.createElement('div');
-      const dTaskName = document.createElement('p');
-      const dDescription = document.createElement('p');
-      const dDate = document.createElement('p');
-      
-
-      const taskBtnContainer = document.createElement('div');
+      const main = document.querySelector('.active-content')
+      const name = document.createElement('p');
+      const container = document.createElement('div');
+      const description1 = document.createElement('p');
+      const date = document.createElement('p');
       const editBtn = document.createElement('button');
       const deleteBtn = document.createElement('button');
+      const checkbox = document.createElement('input');
 
-      section.appendChild(taskContainer);
-      taskContainer.appendChild(dTaskContainer);
-      dTaskContainer.appendChild(dTaskInfoContainer);
-      dTaskInfoContainer.appendChild(dTaskName);
-      dTaskInfoContainer.appendChild(dDescription);
-      dTaskInfoContainer.appendChild(dDate);
 
-      dTaskInfoContainer.appendChild(taskBtnContainer);
-      taskBtnContainer.appendChild(editBtn);
-      taskBtnContainer.appendChild(deleteBtn);
+      checkbox.type = 'checkbox';
+      main.appendChild(container);
+      container.appendChild(checkbox);
+      container.appendChild(name);
+      container.appendChild(description1);
+      container.appendChild(date);
+      container.appendChild(editBtn);
+      container.appendChild(deleteBtn);
 
-      taskContainer.classList.add('task-absolute');
-      dTaskContainer.classList.add('tasks');
-      dTaskInfoContainer.classList.add('tasks-description');
-      taskBtnContainer.classList.add('tasks-button');
-
-      dTaskName.textContent = taskName.value;
-      dDescription.textContent = description.value;
-      dDate.textContent = description.value;  
-
+      name.textContent = taskName.value;
+      description1.textContent = description.value;
+      date.textContent = dueDate.value;
       editBtn.textContent = 'Edit';
       deleteBtn.textContent = 'X';
+
+      date.disabled = true;
+      container.classList.add('tasks');
     }
+    displayTask();
   }
 
   addProjectButton.addEventListener('click', createProject);
