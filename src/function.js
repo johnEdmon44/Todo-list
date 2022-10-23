@@ -144,16 +144,23 @@ const project = (function () {
   }
 
 
-  function addTaskToProject() {
+  function addTaskToProject(z) {
     const getId = document.querySelector('.active-content');
     const taskName = document.querySelector('#task-name');
     const dueDate = document.querySelector('#due-date');
     const priority = document.querySelector('#priority');
     const description = document.querySelector('#description');
     const projectid = getId.getAttribute('id');
-    const newTask = new Tasks( projectid  , taskName.value, dueDate.value, description.value, priority.value );
-    const foo = projects.find(p => p.id === projectid);
-    foo.tasks.push(newTask);
+    if(!taskName.value && !description.value) {
+      alert('Please complete the field');
+      z.preventDefault();
+    } else {
+      const newTask = new Tasks( projectid  , taskName.value, dueDate.value, description.value, priority.value );
+      const foo = projects.find(p => p.id === projectid);
+      foo.tasks.push(newTask);
+      displayTask();
+    }
+   
 
     function displayTask() {
       const main = document.querySelector('.active-content')
@@ -184,7 +191,7 @@ const project = (function () {
       date.disabled = true;
       container.classList.add('tasks');
     }
-    displayTask();
+    
   }
 
   addProjectButton.addEventListener('click', createProject);
