@@ -5,5 +5,5 @@ WIP
 Todo
 
 - Edit
-- Delete
+- Fix Deleting multiple task in array
 - Sort
