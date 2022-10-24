@@ -160,7 +160,8 @@ const project = (function () {
       const foo = projects.find(p => p.id === projectid);
       foo.tasks.push(newTask);
       displayTask();
-      console.log(projects)
+      console.log(projects);
+      deleteTask()
     }
     
 
@@ -197,8 +198,28 @@ const project = (function () {
       deleteBtn.setAttribute('data-delete', taskName.value);
       editBtn.setAttribute('data-edit', taskName.value);
     }
-    
   }
+
+  function deleteTask () {
+    const delButton = document.querySelectorAll('.delete-task');
+    delButton.forEach(del => {
+      del.addEventListener('click', deletes);
+    });
+
+    
+    function deletes(e) {
+      const foo = e.target.dataset.delete;
+      const bar = document.querySelector('.active-content');
+      const foofoo = bar.id;
+      const foobar = projects.find(p => p.name === foofoo);
+      const barfoo = foobar.tasks.find(t => t.taskId === foo);
+      foobar.tasks.splice(barfoo, 1);
+      e.currentTarget.parentNode.remove();
+      console.log(projects);
+    }
+  }
+
+
 
   addProjectButton.addEventListener('click', createProject);
   return {
