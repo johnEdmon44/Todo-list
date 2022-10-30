@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
   <script src="main.js" defer></script>
   <title>Todo list</title>
 </head>
@@ -12,80 +12,78 @@
   <header id="main-header">
     <h1>TODO</h1>
   </header>
+  
+  <main>
+    <nav>
+      <ul>
+        <li class=""><button id="open-project">Add Project</button></li>
+        <div class="dropdown">
+          <form action="">
+            <input type="text" name="project name" id="project-name" placeholder="Project Name"><br>
+            <button id="add-project">Add</button>
+          </form>
+        </div>
+        <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
+        <li><button data-tab-target="#today">Today</button></li>
+        <li><button data-tab-target="#this-week">This Week</button></li>
+      </ul>
+      <h1>Projects</h1>
+      <ul id="project-container">
+        <li><button data-tab-target="#sample">Sample</button></li>
+      </ul>
+    </nav>
 
 
-  <nav>
-    <button id="open-project">Add project</button>
-    <ul id="tab-container">
-      <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
-      <li><button data-tab-target="#today">Today</button></li>
-      <li><button data-tab-target="#week">This week</button></li>
-      <h2  id="border-bottom">Projects</h2>
-    </ul>
-  </nav>
-
-
-  <main id="main">
-      <section id="inbox" class="hidden active-content container" data-tab-content>
+    <!-- Projects -->
+    <section id="inbox" class="project-container active-content" data-tab-content>
+      <header class="project-header">
         <h1>Inbox</h1>
-      </section>
+        <button class="open-task">Add task</button>
+      </header>
+    </section>
 
-      <section id="today" class="hidden container" data-tab-content>
+    <section id="today" class="project-container" data-tab-content>
+      <header class="project-header">
         <h1>Today</h1>
-      </section>
+      </header>
+    </section>
 
-      <section id="week" class="hidden container" data-tab-content>
-        <h1>This week</h1>
-      </section>
+    <section id="this-week" class="project-container" data-tab-content>
+      <header class="project-header">
+        <h1>This Week</h1>
+      </header>
+    </section>
+
+    <section id="sample" class="project-container" data-tab-content>
+      <header class="project-header">
+        <h1>Sample</h1>
+        <button class="open-task">Add task</button>
+      </header>
+    </section>
   </main>
 
-
-  <div id="project-modal" class="center-transform">
-    <h1>Add project</h1>
-    <form action="">
-      <ul>
-        <li>
-          <label for="project-name">Project Name</label>
-          <input id="project-name" type="text" name="project-name">
-        </li>
-        <li>
-          <button id="add-project" class="add" type="button">Add project</button>
-          <button id="cancel-project" type="button" class="cancel">Cancel</button>
-        </li>
-      </ul>
-    </form>
-  </div>
- 
-  <div id="task-modal" class="hidden center-transform">
+  <!-- Task form -->
+  <form action="" id="task-form">
     <h1>Add Task</h1>
-    <form id="task-form">
+    <fieldset>
       <ul>
+        <li><input type="text" name="task name" id="task-name" placeholder="Task name"></li>
         <li>
-          <label for="task-name">Task name</label>
-          <input type="text" name="task name" id="task-name">
-        </li>
-
-        <li>
-          <label for="due-date">Due date</label>
-          <input type="date" name="due date" id="due-date">
-        </li>
-        <li>
-          <label for="priority">Priority</label>
           <select name="priority" id="priority">
-            <option value="low">Low</option>
-            <option value="Mid">Medium</option>
-            <option value="High">High</option>
+            <option value="1">Low</option>
+            <option value="2">Mid</option>
+            <option value="3">High</option>
           </select>
         </li>
-        <li>
-          <textarea name="description" id="description" cols="30" rows="2"></textarea>
-        </li>
-        <li>
-          <button id="add-task" type="button" class="add">Add</button>
-          <button id="cancel-task" type="button" class="cancel">Cancel</button>
-        </li>
+        <li><textarea name="description" id="description" cols="20" rows="2" placeholder="Short description"></textarea></li>
+        <li><input type="date" id="due-date"></li>
       </ul>
-    </form>
-  </div>
+    </fieldset>
+    <div>
+      <button id="add-task">Add</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </form>
+
 </body>
 </html>
