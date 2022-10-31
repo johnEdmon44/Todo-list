@@ -7,15 +7,14 @@ import '/dist/style.css';
 tabSwitch();
 taskModal();
 // dropdown menu 
-(function () {
-    const openProjectBtn = document.querySelector('#open-project');
-    const dropdown = document.querySelector('.dropdown');
+const openProjectBtn = document.querySelector('#open-project');
+const dropdown = document.querySelector('.dropdown');
 
-  openProjectBtn.addEventListener('click' , () => {
-    dropdown.classList.toggle('dropdown-active');
-    openProjectBtn.classList.toggle('active-button');
-  });
-})();
+openProjectBtn.addEventListener('click' , () => {
+  dropdown.classList.toggle('dropdown-active');
+  openProjectBtn.classList.toggle('active-button');
+});
+
 
 
 
@@ -85,19 +84,16 @@ function taskModal() {
 
 
 // add  task
-(function() {
-  const addTaskBtn = document.querySelector('#add-task');
-  addTaskBtn.addEventListener('click', e => {
-    e.preventDefault();
-    addTask();
+const addTaskBtn = document.querySelector('#add-task');
+addTaskBtn.addEventListener('click', e => {
+  e.preventDefault();
+  addTask();
+  // Reset 
+  const taskForm = document.querySelector('#task-form');
+  const getTaskName = document.querySelector('#task-name');
+  const getDescription = document.querySelector('#description');
 
-    // Reset 
-    const taskForm = document.querySelector('#task-form');
-    const getTaskName = document.querySelector('#task-name');
-    const getDescription = document.querySelector('#description');
-
-    taskForm.classList.remove('active-form');
-    getTaskName.value = '';
-    getDescription.value = '';
-  });
-})();
+  taskForm.classList.remove('active-form');
+  getTaskName.value = '';
+  getDescription.value = '';
+});
