@@ -4,6 +4,6 @@ WIP
 
 Todo
 
-- Edit
+- local storage
 - Sort
 - add style when task is finished
