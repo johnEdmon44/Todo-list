@@ -1,4 +1,4 @@
-import { addProject, addTask } from './function';
+import { addProjectToArray, addTask } from './function';
 import '/dist/style.css';
 'use strict';
 
@@ -40,24 +40,25 @@ export function tabSwitch() {
 
 
 // Add project
-(function () {
-  const addProjectBtn = document.querySelector('#add-project');
-  const dropdown = document.querySelector('.dropdown');
-  const projectName = document.querySelector('#project-name');
-  const dropdownButton = document.querySelector('#open-project');
-
-  addProjectBtn.addEventListener('click', e => {
+const addProjectBtn = document.querySelector('#add-project');
+addProjectBtn.addEventListener('click', e => {
     e.preventDefault();
     addProject();
     tabSwitch(); // call tabswitch to make it work on new project
     taskModal();//  call taskmodal to make it work on new task 
-    //reset
-    dropdown.classList.remove('dropdown-active');
-    projectName.value = '';
-    dropdownButton.classList.remove('active-button');
-  });
-})();
+});
 
+function addProject() {
+  addProjectToArray();
+  const dropdown = document.querySelector('.dropdown');
+  const projectName = document.querySelector('#project-name');
+  const dropdownButton = document.querySelector('#open-project');
+
+  //reset
+  dropdown.classList.remove('dropdown-active');
+  projectName.value = '';
+  dropdownButton.classList.remove('active-button');
+}
 
 
 // task modal 

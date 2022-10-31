@@ -9,14 +9,13 @@ const taskList = [];
 
 
 
-export function addProject() {
+export function addProjectToArray() {
   const getProjectName = document.querySelector('#project-name').value;
 
   if(getProjectName === '') {
     alert('Please input project name');
   } else {
     projectList.push(project(getProjectName, projectId()));
-    console.log(projectList);
     displayProject();
   }
 }
