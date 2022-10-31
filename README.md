@@ -5,5 +5,5 @@ WIP
 Todo
 
 - Edit
-- Fix Deleting multiple task in array
 - Sort
+- add style when task is finished
