@@ -16,20 +16,23 @@
   <main>
     <nav>
       <ul>
-        <li class=""><button id="open-project">Add Project</button></li>
+        <li><button id="open-project" class="tabs">Add Project</button></li>
         <div class="dropdown">
           <form action="">
             <input type="text" name="project name" id="project-name" placeholder="Project Name"><br>
             <button id="add-project">Add</button>
           </form>
         </div>
-        <li><button data-tab-target="#inbox" class="active-button">Inbox</button></li>
-        <li><button data-tab-target="#today">Today</button></li>
-        <li><button data-tab-target="#this-week">This Week</button></li>
+        <li><button data-tab-target="#inbox" class="active-button tabs">Inbox</button></li>
+        <li><button data-tab-target="#today" class="tabs">Today</button></li>
+        <li><button data-tab-target="#this-week" class="tabs">This Week</button></li>
       </ul>
       <h1>Projects</h1>
       <ul id="project-container">
-        <li><button data-tab-target="#sample">Sample</button></li>
+        <li class="projects">
+          <button data-tab-target="#sample" class="tabs">Sample</button>
+          <button class="delete-project">X</button>
+        </li>
       </ul>
     </nav>
 

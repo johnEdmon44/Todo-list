@@ -1,5 +1,6 @@
-export const project = (title) => {
+export const project = (title, id) => {
   return {
-    title: title
+    title: title,
+    id: id
   }
 }

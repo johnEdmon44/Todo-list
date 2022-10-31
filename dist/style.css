@@ -48,7 +48,7 @@ main {
 }
 
 
-nav button {
+.tabs {
   list-style-type: none;
   width: 250px;
   height: 70px;
@@ -66,11 +66,35 @@ nav {
 }
 
 
-nav button:hover{
+.tabs:hover{
   border-left: 5px solid var(--color-darkRed);
   transition: all .3s ease-in-out;
 }
 
+
+.projects {
+  position: relative;
+}
+
+.projects .delete-project{
+  visibility: hidden;
+  opacity:0;
+}
+
+.projects:hover .delete-project {
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+
+
+.delete-project {
+  border: 1px solid rgba(0, 0, 0, 0.179);
+  position: absolute;
+  top: 50%; right: 20%;
+  transform: translate(50%,-50%);
+  padding: 5px;
+}
 
 
 nav h1 {

@@ -8,16 +8,20 @@ const projectList = [];
 const taskList = [];
 
 
+
 export function addProject() {
   const getProjectName = document.querySelector('#project-name').value;
 
   if(getProjectName === '') {
     alert('Please input project name');
   } else {
-    projectList.push(project(getProjectName));
+    projectList.push(project(getProjectName, projectId()));
+    console.log(projectList);
     displayProject();
   }
 }
+
+
 
 
 export function addTask() {
@@ -41,23 +45,43 @@ export function addTask() {
 }
 
 
+
 // create task id
-let counter = 0;
+let idTask = 0;
 function taskId() {
-  return counter ++;
+  return idTask++;
 }
 
 
-// delete task
-(function () {
-  const ul = document.querySelector('.active-content');
+let idProject = 0;
+function projectId() {
+  return idProject++
+}
 
-  ul.addEventListener('click', e => {
-    if(e.target.className === 'delete-task') {
-      const taskId = e.target.parentNode.dataset.task;  
-      const fooBar = taskList.findIndex(f => f.id === +taskId);
-      taskList.splice(fooBar, 1);
-      e.target.parentNode.remove();
-    }
-  })
-})();
+
+
+// delete task
+const ul = document.querySelector('.active-content');
+
+ul.addEventListener('click', e => {
+  if(e.target.className === 'delete-task') {
+    const taskId = e.target.parentNode.dataset.task;  
+    const fooBar = taskList.findIndex(f => f.id === +taskId);
+    taskList.splice(fooBar, 1);
+    e.target.parentNode.remove();
+  }
+});
+
+
+
+//  delete project
+const container = document.querySelector('#project-container');
+
+container.addEventListener('click', e => {
+  if(e.target.className === 'delete-project') {
+    const projectId = e.target.parentNode.dataset.project;
+    const foobar = projectList.findIndex(p => p.id === +projectId);
+    projectList.splice(foobar, 1);
+    e.target.parentNode.remove();
+  }
+});

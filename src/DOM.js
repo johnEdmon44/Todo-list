@@ -6,12 +6,19 @@ export function displayProject() {
   const projectsContainer = document.querySelector('#project-container');
   const list = document.createElement('li');
   const projectTab = document.createElement('button');
+  const deleteProjectBtn = document.createElement('button');
 
+  deleteProjectBtn.textContent = 'X';
   projectsContainer.appendChild(list);
   list.appendChild(projectTab);
+  list.appendChild(deleteProjectBtn);
   projectTab.textContent = getProjectName;
   projectTab.setAttribute('data-tab-target', `#${getProjectName}`);
 
+  deleteProjectBtn.classList.add('delete-project');
+  list.classList.add('projects');
+  projectTab.classList.add('tabs');
+  list.setAttribute('data-project', projectId());
 
   //Project panel
   const main = document.querySelector('main');
@@ -32,6 +39,11 @@ export function displayProject() {
   section.setAttribute('data-tab-content', '');
   header.classList.add('project-header');
   taskButton.classList.add('open-task');
+}
+
+let idProject = 0;
+function projectId() {
+  return idProject++;
 }
 
 
