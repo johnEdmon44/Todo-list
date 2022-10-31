@@ -94,6 +94,17 @@ export function displayTask() {
   deleteBtn.textContent = 'Delete';
 
   container.setAttribute('data-task', taskId());
+
+  switch (+getPriority) {
+    case 1:
+      container.style = 'border: 2px solid green;   outline:1px  solid black;';
+      break;
+    case 2:
+      container.style = 'border: 2px solid yellow;   outline:1px  solid black;';
+      break;
+    case 3:
+      container.style ='border: 2px solid red;  outline:1px  solid black;';
+  }
 }
 
 // add data attribute for task 

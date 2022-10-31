@@ -190,7 +190,6 @@ nav h1 {
 
 .task-container {
   display: flex;
-  border: 2px solid var(--color-darkRed);
   width: 65vw;
   margin-left: 10%;
   margin-right: 10%;
