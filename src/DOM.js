@@ -65,7 +65,7 @@ export function displayTask() {
   const taskName = document.createElement('p');
   const description = document.createElement('p');
   const dueDate = document.createElement('p');
-  const editBtn = document.createElement('button');
+  //const editBtn = document.createElement('button');
   const deleteBtn = document.createElement('button');
 
   checkBox.type = 'checkbox';
@@ -76,7 +76,7 @@ export function displayTask() {
   container.appendChild(taskName);
   container.appendChild(description);
   container.appendChild(dueDate);
-  container.appendChild(editBtn);
+  //container.appendChild(editBtn);
   container.appendChild(deleteBtn);
   
   container.classList.add('task-container');
@@ -90,7 +90,7 @@ export function displayTask() {
   taskName.textContent = getTaskName;
   description.textContent = getDescription;
   dueDate.textContent = getDueDate;
-  editBtn.textContent = 'Edit';
+  //editBtn.textContent = 'Edit';
   deleteBtn.textContent = 'Delete';
 
   container.setAttribute('data-task', taskId());
